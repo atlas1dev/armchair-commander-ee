@@ -45,7 +45,7 @@ public class TroopPurchaseDisplay : MonoBehaviour {
             int myIndustryCost = unitIndustryCost;
 
             if (productId == 3) { // Paratrooping
-                if (productController.controller.selectedCity == null || productController.controller.selectedCity.currentTile.occupant == null || productController.controller.selectedCity.currentTile.occupant.troopType != Troop.infantry) {
+                if (productController.controller.selectedCity == null || productController.controller.selectedCity.currentTile.occupant == null || productController.controller.selectedCity.currentTile.occupant.troopType != Troop.infantry && productController.controller.selectedCity.currentTile.occupant.troopId != 7) {
                     manpowerCostDisplay.text = "-";
                     industryCostDisplay.text = "-";
                 } else {
