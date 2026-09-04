@@ -183,7 +183,7 @@ public class GeneralManagerPopup : MonoBehaviour {
 			cmdSizeText.text = ((int)(playerData.generals[generalName].maxCmdSize[playerData.playerData.generals[generalName]])).ToString();
 
 			generalNameText.text = CustomFunctions.TranslateText(generalName) + " " + CustomFunctions.TranslateText("Lvl. ") + (playerData.playerData.generals[generalName] + 1);
-			bioText.text = "test";
+			bioText.text = playerData.generals[generalName].bio;
 			
 			if (playerData.playerData.generals[generalName] < playerData.generals[generalName].cost.Length - 1) {
 				enableTexts();
@@ -225,7 +225,6 @@ public class GeneralManagerPopup : MonoBehaviour {
 				disableTexts();
 			}
 		} else {
-
 			infAtkText.text = ((int)(playerData.generals[generalName].infAtk[0] + 100f)).ToString() + "%";
 			armorAtkText.text = ((int)(playerData.generals[generalName].armorAtk[0] + 100f)).ToString() + "%";
 			artyAtkText.text = ((int)(playerData.generals[generalName].artilleryAtk[0] + 100f)).ToString() + "%";

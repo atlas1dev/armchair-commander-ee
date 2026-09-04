@@ -185,7 +185,7 @@ public abstract class Unit : MonoBehaviour {
 			if (!isCollat)
 				ad = controller.CheckAirDefences(currentTile, target.currentTile, animate);
 		} else if (troopId == 20) {
-			controller.airplaneType = 4; //missile
+			controller.airplaneType = 5; //missile
 			if (!isCollat)
 				ad = controller.CheckAirDefences(currentTile, target.currentTile, animate);
 		}
@@ -240,7 +240,7 @@ public abstract class Unit : MonoBehaviour {
 			controller.airplaneType = 1;
 			ad = controller.CheckAirDefences(currentTile, target.currentTile, animate);
 		} else if (troopId == 20) {
-			controller.airplaneType = 4; //missile
+			controller.airplaneType = 5; //missile
 			ad = controller.CheckAirDefences(currentTile, target.currentTile, animate);
 		}
 		if (animate) {

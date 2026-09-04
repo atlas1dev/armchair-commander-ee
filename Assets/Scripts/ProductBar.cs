@@ -482,7 +482,7 @@ public class ProductBar : MonoBehaviour {
                 airplaneOilCost = CalculateTroopOilCost((int)selectedCategory, productId, controller.playerCountry);
                 controller.airplaneMode = true;
                 
-                if (productId == 2) {
+                if (productId == 3) {
                     controller.findParatrooperRange(airplaneRanges[productId] + controller.CheckCountryTech(controller.playerCountry, Controller.TechTroopType.Air, Controller.TechCategory.Range));
                 } else {
                     controller.findAirStrikeRange(airplaneRanges[productId] + controller.CheckCountryTech(controller.playerCountry, Controller.TechTroopType.Air, Controller.TechCategory.Range));

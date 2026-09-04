@@ -2938,7 +2938,7 @@ public class Controller : MonoBehaviour {
 		float damage = -1;
 		bool isNuke = false;
 		bool collat = false;
-		if (airplaneType == 3 && nuclearWarheadDropdown.value > 0) {
+		if (airplaneType == 4 && nuclearWarheadDropdown.value > 0) {
 			switch (nuclearWarheadDropdown.value) {
 				case 1:
 					damage = 650 * UnityEngine.Random.Range(0.9f, 1.1f);
@@ -4656,7 +4656,7 @@ public class Controller : MonoBehaviour {
 			if (nuclearWarheadDropdown.gameObject.activeInHierarchy)
 				nuclearWarheadDropdown.gameObject.SetActive(false);
 		} else {
-			if (!passingRound && (airplaneMode && airplaneType == 3 || selectedSoldier != null && selectedSoldier.troopId == 20 && selectedSoldier.canAttack)) {
+			if (!passingRound && (airplaneMode && airplaneType == 4 || selectedSoldier != null && selectedSoldier.troopId == 20 && selectedSoldier.canAttack)) {
 				//turn on nuclear dropdown selection
 				if (!nuclearWarheadDropdown.gameObject.activeInHierarchy) {
 					UpdateNuclearDisplay();
@@ -5019,12 +5019,12 @@ public class Controller : MonoBehaviour {
 							}
 							inAirStrike = true;
 
-							if (airplaneType != 2) {
+							if (airplaneType != 3) {
 								countryDatas[playerCountry].fuel -= productBar.airplaneOilCost;
 								countryDatas[playerCountry].industry -= productBar.airplaneIndustryCost;
 								findAirStrikeRange(productBar.airplaneRanges[airplaneType] + CheckCountryTech(playerCountry, TechTroopType.Air, TechCategory.Range));
 								AirStrikeDelay(selectedCity, t);
-								if (airplaneType == 3 && nuclearWarheadDropdown.value > 0) {
+								if (airplaneType == 4 && nuclearWarheadDropdown.value > 0) {
 									countryDatas[playerCountry].nukes[nuclearWarheadDropdown.value - 1]--;
 									UpdateNuclearDisplay();
 									//nuclearWarheadDropdown.value = 0;
@@ -5035,7 +5035,7 @@ public class Controller : MonoBehaviour {
 								countryDatas[playerCountry].industry -= productBar.airplaneIndustryCost * selectedCity.currentTile.occupant.tier;
 								StartCoroutine(paratroopDelay(selectedCity.currentTile, t));
 							}
-							if (airplaneType == 2 || countryDatas[playerCountry].fuel < productBar.airplaneOilCost || countryDatas[playerCountry].industry < productBar.airplaneIndustryCost) {
+							if (airplaneType == 3 || countryDatas[playerCountry].fuel < productBar.airplaneOilCost || countryDatas[playerCountry].industry < productBar.airplaneIndustryCost) {
 								airplaneMode = false;
 								selectedCity = null;
 

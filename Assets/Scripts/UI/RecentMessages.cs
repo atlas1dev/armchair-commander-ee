@@ -37,20 +37,21 @@ public class RecentMessages : MonoBehaviour {
 			RedDotImage.enabled = true;
 		} else {
 			if (language == "English") {
-				displayedMessage = "Welcome to Armchair Commander version BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "Welcome to Armchair Commander version BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt or find it on Discord!";
 			} else if (language == "Chinese") {
-				displayedMessage = "欢迎来到《扶手椅指挥官》版本 BETA 1.0.\n更新日志： https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "欢迎来到《扶手椅指挥官》版本 BETA 1.0.\n更新日志： https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt 或者在Discord上找到！";
 			} else if (language == "Japanese") {
-				displayedMessage = "アームチェアコマンダーバージョンBETA 1.0へようこそ。\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "アームチェアコマンダーバージョンBETA 1.0へようこそ。\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt あるいはDiscordで見つけるのもいいですよ!";
 			} else if (language == "Spanish") {
-				displayedMessage = "Bienvenidos a la versión de Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "Bienvenidos a la versión de Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt o búscalo en Discord";
 			} else if (language == "French") {
-				displayedMessage = "Bienvenue dans la version BETA 1.0 de Armchair Commander. Changelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "Bienvenue dans la version BETA 1.0 de Armchair Commander. Changelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt ou le trouver sur Discord";
 			} else if (language == "Russian") {
-				displayedMessage = "Добро пожаловать в версию Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt";
+				displayedMessage = "Добро пожаловать в версию Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt или найти его в Discord";
 			} else {
 
 			}
+			RedDotImage.enabled = false;
 		}
 		MyPlayerPrefs.instance.SetString("lastMessage", displayedMessage);
 		messageReady = true;
