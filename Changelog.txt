@@ -1,4 +1,5 @@
 Armchair Commander Expanded Edition BETA V1.0 Changelog:
+- Upgraded project to Unity version 6000.4.0f1.
 - Added 200 bonus coins for new users.
 - Redesigned the UI for a sleeker look.
 - Removed all ads and purchases.
