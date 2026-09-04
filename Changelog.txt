@@ -3,6 +3,7 @@ Armchair Commander Expanded Edition BETA V1.0 Changelog:
 - Added 200 bonus coins for new users.
 - Redesigned the UI for a sleeker look.
 - Removed all ads and purchases.
+- Added a new toggle for language selection to the menu screen.
 - Added a map download function.
 - Added a new community maps search filter specifically for modded maps.
 - Added a setting to disable unit animation.
