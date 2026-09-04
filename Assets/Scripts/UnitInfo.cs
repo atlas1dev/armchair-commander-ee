@@ -25,7 +25,7 @@ public class UnitInfo : MonoBehaviour {
             perk1.sprite = PlayerData.instance.generalPerkSprites[(int)PlayerData.instance.generals[general].perk1];
             perk2.sprite = PlayerData.instance.generalPerkSprites[(int)PlayerData.instance.generals[general].perk2];
             perk3.sprite = PlayerData.instance.generalPerkSprites[(int)PlayerData.instance.generals[general].perk3];
-            generalNameText.text = CustomFunctions.TranslateText(unit.general) + " (" + CustomFunctions.TranslateText("level") + " "+ (unit.generalLevel + 1).ToString() + ")";
+            generalNameText.text = CustomFunctions.TranslateText(unit.general) + " (" + "Lvl" + " "+ (unit.generalLevel + 1).ToString() + ")";
             airText.text = "+" + (PlayerData.instance.generals[general].airAtk[unit.generalLevel]).ToString() + "%";
         }
     }

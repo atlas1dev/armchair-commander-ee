@@ -49,7 +49,7 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Manstein", photos[1]);
 		generalPhotos.Add("Guderian", photos[2]);
 		generalPhotos.Add("Rundstedt", photos[4]);
-		generalPhotos.Add("Doenitz", photos[5]);
+		generalPhotos.Add("Donitz", photos[5]);
 		generalPhotos.Add("Zhukov", photos[6]);
 		generalPhotos.Add("Konev", photos[7]);
 		generalPhotos.Add("Rokossovsky", photos[8]);
@@ -73,7 +73,6 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Ma Bufang", photos[21]);
 		generalPhotos.Add("Long Yun", photos[22]);
 		generalPhotos.Add("Peng Dehuai", photos[23]);
-
 
 		generalPhotos.Add("Zhang Zizhong", photos[27]);
 		generalPhotos.Add("Fu Zuoyi", photos[28]);
@@ -520,7 +519,7 @@ public class PlayerData : MonoBehaviour {
 		generals.Add("Smigly", new General("Poland", "Biography: Edward Rydz-Smigly (1886–1941) was a Polish military marshal during World War II.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Logistics));
 		generals.Add("Leopold", new General("Belgium", "Biography: Leopold III (1901–1983) was a Belgian military commander during World War II.", General.GeneralType.AArtillery, hideGeneral: false));
 		generals.Add("Pervizi", new General("Albania", "", General.GeneralType.SInfantry));
-		generals.Add("Giap", new General("Vietnam", "Biography: Võ Nguyên Giáp (1911–2013) was a Vietnamese military general during the First Indochina War.", General.GeneralType.SArtillery, hideGeneral: false, perk1: General.GeneralPerk.Armor, perk2: General.GeneralPerk.Artillery, perk3: General.GeneralPerk.Guerilla));
+		generals.Add("Giap", new General("Vietnam", "Biography: Vo Nguyen Giap (1911–2013) was a Vietnamese military general during the First Indochina War.", General.GeneralType.SArtillery, hideGeneral: false, perk1: General.GeneralPerk.Armor, perk2: General.GeneralPerk.Artillery, perk3: General.GeneralPerk.Guerilla));
 		generals.Add("Sudirman", new General("Indonesia", "", General.GeneralType.AInfantry, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Guerilla));
 		generals.Add("Choibalsan", new General("Mongolia", "", General.GeneralType.AInfantry));
 		generals.Add("Kim", new General("NorthKorea", "Biography: Kim Il Sung (1912–1994) was a North Korean military marshal during the Korean War.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Training));
