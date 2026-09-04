@@ -11,4 +11,4 @@ Enjoy!
 - The latest version is 1.0 BETA.
 - The mod was made in Unity version 6000.4.0f1.
 - Contributions, bug-reports, translations, and tests are appreciated.
-- The project was successfully tested on Fedora Linux and is also likely supported by most Debian-based distributions.
+- The project was successfully tested on Fedora and likely works on the most popular Linux distributions.
