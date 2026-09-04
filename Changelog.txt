@@ -1,50 +1,9 @@
-Armchair Commander Expanded Edition BETA V1.0 Changelog:
-- Upgraded project to Unity version 6000.4.0f1.
-- Added 200 bonus coins for new users.
-- Redesigned the UI for a sleeker look.
-- Removed all ads and purchases.
-- Added a new toggle for language selection to the menu screen.
-- Added a map download function.
-- Added a new community maps search filter specifically for modded maps.
-- Added a setting to disable unit animation.
-- Added 3 new menu backgrounds.
-- Added 3 new unit sounds.
-- Added 21 new unit sprites.
-- Added 29 new custom flags to the base game.
-- Added 1 new terrain sprite.
-- Added a sand border for tiles.
-- Recolored water tiles.
-- Increased the size of the resource bar.
-- Added a disable production toggle to the map editor.
-- Added custom unit naming.
-- Added a smoke effect after explosions.
-- Made railroads build-able.
-- Disabled resource production in cities and tiles if there is radiation.
-- Added capital cities which give +10 manpower and industry per turn as well as +10 healing to any damaged unit on the city per turn.
-- Better air force:
-  - AI air strikes are now more realistic.
-  - Air defenses are now based on a % chance instead of a set value.
-  - Added attack helicopters.
-  - Paratroopers can now carry infantry artillery.
-- Advanced diplomacy:
-  - Added the ability to view allied resources to the diplomacy menu.
-  - Ally with neutral nations (if enabled).
-  - Terminate alliances (if enabled).
-  - Spy on enemy and neutral nations (if enabled).
-  - Give nukes to allies.
-- Nerfed the missile launcher:
-  - Removed air defense from the unit.
-  - Lowered the unit's HP by 25.
-- Buffed rocket artillery:
-  - Increased range to 3 tiles for realism.
-- Buffed General Inoue:
-  - Added the navy perk.
-- Added 7 generals to the store: 
-  - Smigly
-  - Leopold, 
-  - Olav
-  - Freyberg
-  - Antonescu
-  - Kim Il Sung 
-  - Inoue
-  - DeSantis
+Armchair Commander Expanded Edition BETA V1.2 Changelog:
+- Fixed update notifications.
+- Fixed general purchase button misalignment.
+- Decreased the length of the general description in unit info.
+- Fixed general biographies in the upgrade menu.
+- Fixed Donitz image glitch.
+- Fixed bombing glitch.
+- Fixed paratrooping glitch.
+- Fixed strategic bombing glitch.
