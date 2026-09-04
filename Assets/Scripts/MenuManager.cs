@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour {
 
 	public Image background, socialMediaDot;
 	public Sprite[] splashSprites;
-	public Button loadButton, disableAdsButton, quitGameButton;
+	public Button loadButton, quitGameButton;
 
 	public GameNotificationsManager manager;
 	bool started = false;
@@ -118,12 +118,7 @@ public class MenuManager : MonoBehaviour {
 		}
 	}
 	public void DisableAds() {
-		if (!PlayerData.instance.playerData.removedAds && PlayerData.instance.playerData.money >= 1000) {
-			PlayerData.instance.playerData.removedAds = true;
-			PlayerData.instance.playerData.money -= 1000;
-			PlayerData.instance.saveFile();
-			Destroy(disableAdsButton.gameObject);
-		}
+		
 	}
 	public void LanguageUpdated() {
 		switch (languageDropdown.value) {
@@ -184,19 +179,6 @@ public class MenuManager : MonoBehaviour {
 	}
 	IEnumerator LateStart() {
 		yield return null;
-
-		//TODO: from old playerPrefs data in ~2021 (remove after a few updates)
-		if (myPlayerPrefs.GetInt("disableAds") == 1 && !PlayerData.instance.playerData.removedAds) {
-			PlayerData.instance.playerData.removedAds = true;
-			PlayerData.instance.saveFile();
-		}
-		if (PlayerData.instance.playerData.removedAds && disableAdsButton != null) {
-			Destroy(disableAdsButton.gameObject);
-		} else {
-			if (disableAdsButton != null) {
-				disableAdsButton.gameObject.SetActive(true);
-			}
-		}
 	}
 	private void Awake() {
 		instance = this;
@@ -216,10 +198,6 @@ public class MenuManager : MonoBehaviour {
 		}
 
 		Application.targetFrameRate = 30;
-
-//#if !UNITY_IOS && !UNITY_ANDROID && !UNITY_EDITOR
-//        Destroy(disableAdsButton.gameObject);
-//#endif
 
 		myPlayerPrefs = MyPlayerPrefs.instance;
 		myPlayerPrefs.SetString("multiplayerMap", "");

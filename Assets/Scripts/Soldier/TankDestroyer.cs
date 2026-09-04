@@ -19,6 +19,7 @@ public class TankDestroyer : Unit {
         if (troopSkin == Skin.Japanese) {
             tankAnimator.hull.GetComponent<SpriteRenderer>().sprite = tankAnimator.japaneseHull;
             tankAnimator.turret.GetComponent<SpriteRenderer>().sprite = tankAnimator.japaneseTurret;
+            //tankAnimator.turret.transform.localPosition = new Vector3(1.45f, 0.5f, 0f);
         } else if (troopSkin == Skin.American) {
             tankAnimator.hull.GetComponent<SpriteRenderer>().sprite = tankAnimator.americanHull;
             tankAnimator.turret.GetComponent<SpriteRenderer>().sprite = tankAnimator.americanTurret;
@@ -35,7 +36,6 @@ public class TankDestroyer : Unit {
             tankAnimator.hull.GetComponent<SpriteRenderer>().sprite = tankAnimator.sovietHull;
             tankAnimator.turret.GetComponent<SpriteRenderer>().sprite = tankAnimator.sovietTurret;
             tankAnimator.muzzle.transform.localPosition = new Vector3(9.28f, 1.330f, 0f);
-
         }
     }
     public override void toggleVisibility() { 

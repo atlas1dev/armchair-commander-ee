@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 3184747507634281921}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.92, y: 0.68, z: 0}
+  m_LocalPosition: {x: 1.41, y: 0.27, z: 0}
   m_LocalScale: {x: 1.42, y: 1.42, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -307,6 +307,7 @@ MonoBehaviour:
   stackedImage: {fileID: 0}
   general: 
   defaultGeneral: 
+  unitName: 
   generalLevel: 0
   selected: 0
   enemySelected: 0
@@ -325,7 +326,7 @@ MonoBehaviour:
   originalArmor: 0
   originalArmorPierce: 0
   customCountryValues: []
-  movementFuelCost: 8
+  movementFuelCost: 7
   maxHealth: 150
   damage: 45
   armor: 15
@@ -336,15 +337,17 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - -0.3
   - 0
   - 0
   - 0
   terrainDefenceBonuses:
   - 0.1
-  - 0
+  - 0.1
   - 0
   - -0.15
   - -0.3
+  - 0
   - 0
   - 0
   range: 2
@@ -869,10 +872,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sovietTurret: {fileID: 21300000, guid: b493068066c9e48c0a7bfcfe836c1c29, type: 3}
   sovietHull: {fileID: 21300000, guid: 5e243cf8afe284d0b8a80ce113e45c5d, type: 3}
-  americanTurret: {fileID: 21300000, guid: 180ae21f2be7cd44588e59f011128b93, type: 3}
-  americanHull: {fileID: 21300000, guid: 01a1e7dc95c245541860b217d058d17b, type: 3}
-  japaneseTurret: {fileID: 21300000, guid: d48e3e6632a9144c3afc74d8af59b2a6, type: 3}
-  japaneseHull: {fileID: 21300000, guid: 662c6e59cb5344c36902342a02e08845, type: 3}
+  americanTurret: {fileID: 21300000, guid: 974f9e4d971784efa9679186c0414e2e, type: 3}
+  americanHull: {fileID: 21300000, guid: 70d6bbc607b2f4beb8cb7891bd828ec5, type: 3}
+  japaneseTurret: {fileID: 21300000, guid: 662c6e59cb5344c36902342a02e08845, type: 3}
+  japaneseHull: {fileID: 21300000, guid: d48e3e6632a9144c3afc74d8af59b2a6, type: 3}
   frenchTurret: {fileID: 21300000, guid: cf39dcc0f12fb4c4f989a80c4438a7fa, type: 3}
   frenchHull: {fileID: 21300000, guid: 42a5c4615f4824b81bbe21aa7b15106a, type: 3}
   englishTurret: {fileID: 21300000, guid: d22bb058444084a258596f4d94f6cc1d, type: 3}
@@ -881,7 +884,7 @@ MonoBehaviour:
   hull: {fileID: 1355070215413452669}
   muzzle: {fileID: 1769120333184776036}
   muzzle2: {fileID: 0}
-  isTurret: 1
+  isTurret: 0
 --- !u!1 &7986123016312543258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,8 +1058,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3132713518987442207, guid: 931c1ab029718464d91db01e52fa1a77,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 931c1ab029718464d91db01e52fa1a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
