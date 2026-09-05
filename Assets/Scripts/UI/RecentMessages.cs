@@ -17,7 +17,7 @@ public class RecentMessages : MonoBehaviour {
 		UnityWebRequest r = UnityWebRequest.Get("https://raw.githubusercontent.com/atlas1dev/armchair-commander-ee/refs/heads/main/Version.txt");
 		yield return r.SendWebRequest();
 		displayedMessage = r.downloadHandler.text.TrimEnd('\r', '\n');;
-		if (displayedMessage != "BETA 1.1") {
+		if (displayedMessage != "BETA 1.2.5") {
 			print(displayedMessage);
 			if (language == "English") {
 				displayedMessage = "An update is available! Check the Discord for more information!";

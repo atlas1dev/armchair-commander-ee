@@ -99,12 +99,12 @@ public class Shop1Manager : MonoBehaviour {
 	//the countries original id to load generals with
 	private List<string> availableCountries = new List<string>();
 	void Start() {
-#if !UNITY_ANDROID
-		if (!Application.isMobilePlatform) {
-			techButton.transform.Translate(Vector3.right * 200f * CustomFunctions.getUIScale());
-			shopButton.transform.Translate(Vector3.right * 200f * CustomFunctions.getUIScale());
-		}
-#endif
+		//#if !UNITY_ANDROID
+		//if (!Application.isMobilePlatform) {
+			//techButton.transform.Translate(Vector3.right * 200f * CustomFunctions.getUIScale());
+			//shopButton.transform.Translate(Vector3.right * 200f * CustomFunctions.getUIScale());
+		//}
+		//#endif
 
 		countryDropdown.options = new List<Dropdown.OptionData>();
 		countryDropdown.options.Add(new Dropdown.OptionData(CustomFunctions.TranslateText("All Countries")));
