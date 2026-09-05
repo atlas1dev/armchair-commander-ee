@@ -1933,12 +1933,14 @@ public class Controller : MonoBehaviour {
 		canAttackTiles = new List<Tile>();
 	}
 	public void aiProduceTroop(City city, string country) {
-		if (!mapData.disableDiplomacy[myPlayerPrefs.GetInt("level")]) {
+		if (!mapData.disableProduction[myPlayerPrefs.GetInt("level")]) {
+			print("TEST3");
 			produceTroop(city, country);
 		}
 	}
 	//ai production
 	void produceTroop(City city, string paymentCountry) {
+		print("TEST");
 		//yield return null;
 		if (city.currentTile.occupant == null) {
 			int iteration = 0;
@@ -1979,8 +1981,6 @@ public class Controller : MonoBehaviour {
 					print("manpower: " + countryDatas[paymentCountry].manpower);
 					print("industry: " + countryDatas[paymentCountry].industry);
 					print("fuel: " + countryDatas[paymentCountry].fuel);
-
-
 					break;
 				}
 				iteration++;
