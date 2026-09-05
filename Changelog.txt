@@ -1,9 +1,3 @@
-Armchair Commander Expanded Edition BETA V1.2 Changelog:
-- Fixed update notifications.
-- Fixed general purchase button misalignment.
-- Decreased the length of the general description in unit info.
-- Fixed general biographies in the upgrade menu.
-- Fixed Donitz image glitch.
-- Fixed bombing glitch.
-- Fixed paratrooping glitch.
-- Fixed strategic bombing glitch.
+Armchair Commander Expanded Edition BETA V1.2.5 Changelog:
+- Fixed general shop UI misalignment.
+- Fixed no AI unit production glitch.
