@@ -350,6 +350,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  - -0.1
   range: 2
   movement: 8
   infantryAttackBonus: 0

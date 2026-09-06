@@ -2032,8 +2032,6 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Large Map
       m_Image: {fileID: 0}
-    - m_Text: Tiny Map
-      m_Image: {fileID: 0}
     - m_Text: Wide Medium Map
       m_Image: {fileID: 0}
     - m_Text: Wide Large Map

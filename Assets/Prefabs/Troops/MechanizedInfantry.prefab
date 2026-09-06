@@ -2041,6 +2041,7 @@ MonoBehaviour:
   stackedImage: {fileID: 2118945158829978776}
   general: 
   defaultGeneral: 
+  unitName: 
   generalLevel: 0
   selected: 0
   enemySelected: 0
@@ -2081,6 +2082,9 @@ MonoBehaviour:
   - -0.3
   - 0
   - -0.05
+  - 0
+  - -0.1
+  - -0.1
   range: 1
   movement: 15
   infantryAttackBonus: 0.25

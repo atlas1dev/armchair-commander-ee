@@ -74,7 +74,7 @@ public class AlmanacManager : MonoBehaviour {
         range.text = insSoldier.range.ToString();
         movement.text = insSoldier.movement.ToString();
 
-        string[] terrainTitles = new string[] {"On Plains", "In Forests", "On Mountains", "In Cities", "not shown", "not shown", "On Deserts", "not shown", "On Snow"}; //snow is yet to be added
+        string[] terrainTitles = new string[] {"On Plains", "In Forests", "On Mountains", "In Cities", "not shown", "not shown", "On Deserts", "not shown", "On Snow", "In Villages"}; //snow is yet to be added
         Color[] terrainColors = new Color[] {Color.green, Color.darkGreen, Color.lightGray, Color.beige, Color.white, Color.yellow, Color.sandyBrown, Color.salmon, Color.white};
 
         //public enum Terrain {plains, forest, mountains, city, water, oil, desert, highMountains}

@@ -18,11 +18,11 @@ public class Spy2 : MonoBehaviour
         displayName.text = cname;
         float chance = UnityEngine.Random.Range(0f, 100f);
         if (chance <= 50f) {
-            industryText.text = "Industry: " + industry.ToString();
-            manpowerText.text = "Manpower: " + manpower.ToString();
-            fuelText.text = "Fuel: " + fuel.ToString();
-            nukes1Text.text = "Atomic Nukes: " + nukes1.ToString();
-            nukes2Text.text = "Hydrogen Nukes: " + nukes2.ToString();
+            industryText.text = CustomFunctions.TranslateText("Industry: ") + industry.ToString();
+            manpowerText.text = CustomFunctions.TranslateText("Manpower: ") + manpower.ToString();
+            fuelText.text = CustomFunctions.TranslateText("Fuel: ") + fuel.ToString();
+            nukes1Text.text = CustomFunctions.TranslateText("Atomic Nukes: ") + nukes1.ToString();
+            nukes2Text.text = CustomFunctions.TranslateText("Hydrogen Nukes: ") + nukes2.ToString();
         } else {
             industryText.text = "ESPIONAGE FAILED";
             manpowerText.text = "ESPIONAGE FAILED";

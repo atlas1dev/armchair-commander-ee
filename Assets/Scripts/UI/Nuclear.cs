@@ -26,9 +26,9 @@ public class Nuclear : MonoBehaviour {
             hydroButton.interactable = false;
         }
         
-        yourAtom.text = "You have: " + controller.countryDatas[controller.playerCountry].nukes[0].ToString();
+        yourAtom.text = CustomFunctions.TranslateText("You have: ") + controller.countryDatas[controller.playerCountry].nukes[0].ToString();
         theirAtom.text = controller.countryDatas[country].nukes[0].ToString();
-        yourHydro.text = "You have: " + controller.countryDatas[controller.playerCountry].nukes[1].ToString();
+        yourHydro.text = CustomFunctions.TranslateText("You have: ") + controller.countryDatas[controller.playerCountry].nukes[1].ToString();
         theirHydro.text = controller.countryDatas[country].nukes[1].ToString();
     }
 
@@ -45,7 +45,7 @@ public class Nuclear : MonoBehaviour {
             atomButton.interactable = false;
         }
 
-        yourAtom.text = "You have: " + controller.countryDatas[controller.playerCountry].nukes[0].ToString();
+        yourAtom.text = CustomFunctions.TranslateText("You have: ") + controller.countryDatas[controller.playerCountry].nukes[0].ToString();
         theirAtom.text = controller.countryDatas[country].nukes[0].ToString();
     }
 
@@ -59,7 +59,7 @@ public class Nuclear : MonoBehaviour {
             hydroButton.interactable = false;
         }
 
-        yourHydro.text = "You have: " + controller.countryDatas[controller.playerCountry].nukes[1].ToString();
+        yourHydro.text = CustomFunctions.TranslateText("You have: ") + controller.countryDatas[controller.playerCountry].nukes[1].ToString();
         theirHydro.text = controller.countryDatas[country].nukes[1].ToString();
     }
 

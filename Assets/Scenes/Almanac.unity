@@ -4581,6 +4581,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 99e85c4782b384ae7a045809a7339345, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: 07d35cbb5f5bd4b41bb91e440da14f44, type: 3}
+  - {fileID: 21300000, guid: 90ee5dc055e80478baf60b3dc3e54024, type: 3}
   infantryIcon: {fileID: 21300000, guid: 2824e952003ed4edd925900d4b7ec136, type: 3}
   armorIcon: {fileID: 21300000, guid: 31378e758592d49cb8086dfb89ab0771, type: 3}
   navyIcon: {fileID: 21300000, guid: 4cc9b265db6384b8d95ed06088a034a6, type: 3}

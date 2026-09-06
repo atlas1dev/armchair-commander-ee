@@ -17,7 +17,7 @@ public class RecentMessages : MonoBehaviour {
 		UnityWebRequest r = UnityWebRequest.Get("https://raw.githubusercontent.com/atlas1dev/armchair-commander-ee/refs/heads/main/Version.txt");
 		yield return r.SendWebRequest();
 		displayedMessage = r.downloadHandler.text.TrimEnd('\r', '\n');;
-		if (displayedMessage != "BETA 1.2.5") {
+		if (displayedMessage != "BETA 1.3.5") {
 			print(displayedMessage);
 			if (language == "English") {
 				displayedMessage = "An update is available! Check the Discord for more information!";
@@ -37,17 +37,17 @@ public class RecentMessages : MonoBehaviour {
 			RedDotImage.enabled = true;
 		} else {
 			if (language == "English") {
-				displayedMessage = "Welcome to Armchair Commander version BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt or find it on Discord!";
+				displayedMessage = "Welcome to Armchair Commander version BETA 1.3.5.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt or find it on Discord!";
 			} else if (language == "Chinese") {
-				displayedMessage = "欢迎来到《扶手椅指挥官》版本 BETA 1.0.\n更新日志： https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt 或者在Discord上找到！";
+				displayedMessage = "欢迎来到《扶手椅指挥官》版本 BETA 1.3.5.\n更新日志： https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt 或者在Discord上找到！";
 			} else if (language == "Japanese") {
-				displayedMessage = "アームチェアコマンダーバージョンBETA 1.0へようこそ。\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt あるいはDiscordで見つけるのもいいですよ!";
+				displayedMessage = "アームチェアコマンダーバージョンBETA 1.3.5へようこそ。\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt あるいはDiscordで見つけるのもいいですよ!";
 			} else if (language == "Spanish") {
-				displayedMessage = "Bienvenidos a la versión de Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt o búscalo en Discord";
+				displayedMessage = "Bienvenidos a la versión de Armchair Commander BETA 1.3.5.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt o búscalo en Discord";
 			} else if (language == "French") {
-				displayedMessage = "Bienvenue dans la version BETA 1.0 de Armchair Commander. Changelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt ou le trouver sur Discord";
+				displayedMessage = "Bienvenue dans la version BETA 1.3.5 de Armchair Commander. Changelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt ou le trouver sur Discord";
 			} else if (language == "Russian") {
-				displayedMessage = "Добро пожаловать в версию Armchair Commander BETA 1.0.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt или найти его в Discord";
+				displayedMessage = "Добро пожаловать в версию Armchair Commander BETA 1.3.5.\nChangelog: https://github.com/atlas1dev/armchair-commander-ee/blob/main/Changelog.txt или найти его в Discord";
 			} else {
 
 			}

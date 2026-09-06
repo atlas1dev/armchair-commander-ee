@@ -1575,11 +1575,18 @@ public class Controller : MonoBehaviour {
 						mapData.soldierIds[myPlayerPrefs.GetInt("level")][index] - 1,
 						mapData.soldierVeterencies[myPlayerPrefs.GetInt("level")][index],
 						mapData.soldierTiers[myPlayerPrefs.GetInt("level")][index], true);
-
+					
 					try {
 						s.unitName = mapData.unitNames[myPlayerPrefs.GetInt("level")][index];
+					} catch {
+
+					}
+
+					try {
 						s.general = mapData.soldierGenerals[myPlayerPrefs.GetInt("level")][index];
+						print(s.general);
 						s.defaultGeneral = s.general;
+						print(s.defaultGeneral);
 						s.generalLevel = mapData.soldierGeneralLevels[myPlayerPrefs.GetInt("level")][index];
 
 						if (countryDatas[s.country].aiGenerals == null) {
@@ -5359,7 +5366,7 @@ public class Controller : MonoBehaviour {
 		canAttackTiles = new List<Tile>();
 		foreach (Collider2D i in t) {
 			Tile ti = i.GetComponent<Tile>();
-			if (ti != null && ti.occupant != null && ti.occupant.isAxis != playerIsAxis &&
+			if (ti != null && ti.occupant != null && ti.occupant.isAxis != playerIsAxis && ti.occupant.troopId != 12 &&
 				!countriesIsNeutral.Contains(ti.country) && findDistanceBetweenTiles(ti, selectedCity.currentTile) <= tileCount) {
 				ti.hexRendererColor = new Color(1f, 0.3f, 0.3f);
 
