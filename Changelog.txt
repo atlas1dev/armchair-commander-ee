@@ -1,5 +1,2 @@
-Armchair Commander Expanded Edition BETA V1.3.0 Changelog:
-- Fixed general disappearance glitch.
-- Removed the tiny map size.
-- Removed the ability for air strikes to target submarines.
-- Added snow and villages to terrain bonuses.
+Armchair Commander Expanded Edition BETA V1.3.5 Changelog:
+- Added new translations.
