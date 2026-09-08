@@ -1,2 +1,19 @@
-Armchair Commander Expanded Edition BETA V1.3.5 Changelog:
-- Added new translations.
+Armchair Commander Expanded Edition BETA V1.4.0 Changelog:
+  - Fixed a glitch that was making general introduction text repeat several times.
+  - Fixed a glitch that removed unit names when continuing games.
+  - Fixed glitch that caused air strikes to freeze when attacking a city that has an airport.
+  - Fixed a glitch that prevented default unit names from showing when opening a map for the first time.
+  - Slightly lowered airport air defense rates.
+  - Fixed editor UI button glitches.
+  - Recolored smoke.
+  - Removed unfinished countries.
+  - Fixed the name of the Philippines.
+  - Added several new translations.
+  - Fixed world map camera size.
+  - Added a delete all toggle for city names.
+  - Added a delete all toggle for unit names.
+  - Added 2 new menu songs.
+  - Added a daily rewards function.
+  - General air stats will now contribute to air defense rates.
+  - Removed the level 6 general UI since it's not actually a feature.
+  - Added level 6 city defense.
