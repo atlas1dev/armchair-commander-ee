@@ -38,9 +38,6 @@ public static class CustomFunctions {
 		"ChineseTibet",
 		"Mongolia",
 		"NeutralThailand",
-		"Bolivia",
-		"CostaRica",
-		"Peru"
 	};
 
 	//TODO: BOOL VALUES HAVE BEEN CHANGED
@@ -110,14 +107,6 @@ public static class CustomFunctions {
 		{"Brazil", 0},
 		{"Colombia", 0},
 		{"Chile", 1},
-		{"Venezuela", 1},
-		{"Ecuador", 1},
-		{"Paraguay", 1},
-		{"Haiti", 1},
-		{"Panama", 1},
-		{"CostaRica", 0},
-		{"Peru", 0},
-		{"Bolivia", 0},
 
 		{"Argentina", 1},
 
@@ -151,7 +140,7 @@ public static class CustomFunctions {
 		{"Australia", 0},
 
 		{"NewZealand", 0},
-		{"Phillipeans", 0},
+		{"Philippines", 0},
 
 		{"Vietnam", 0},
 		{"SouthVietnam", 1},
@@ -175,7 +164,7 @@ public static class CustomFunctions {
 		List<string> americanSkinCountries = new List<string>() {
 		  "Chile", "Colombia", "Argentina"  , "SouthVietnam"  , "Brazil"  , "NatoTurkey"  , "SaudiArabia"  , "Turkey"  , "NatoIndia"  , "India"  , "ROC"  , "USA"  , "NatoUSA"  , "NatoROC" , "Israel"
 			, "Liberia"  , "SouthKorea"  , "ChineseGuangxi"  , "ChineseShanxi"
-			, "ChineseTibet"  , "SouthAfrica", "ChineseXibeiSanma", "ChineseSichuan"  , "ChineseYunnan"  , "Iraq" , "Greece"  , "Phillipeans", "Bolivia", "Peru", "Haiti", "Panama", "Costa Rica", "Venezuela"
+			, "ChineseTibet"  , "SouthAfrica", "ChineseXibeiSanma", "ChineseSichuan"  , "ChineseYunnan"  , "Iraq" , "Greece"  , "Philippines"
 		};
 		List<string> frenchSkinCountries = new List<string>() {
 			"France", "NatoFrance", "NeutralFrance", "Luxembourg", "Belgium", "Netherlands"

@@ -65,6 +65,7 @@ public class BinaryData {
     public List<int> unitTypes, unitTiers, unitXps;
     public List<string> unitDefaultGenerals; //prevents generals from being taken away if assigned at default
     public List<string> unitCountries, unitGenerals;
+    public List<string> unitNames;
 
     public List<int> unitGeneralsLevels; //NOTE: levels were not saved until recent update
 
@@ -112,6 +113,7 @@ public class BinaryData {
         unitsIsLocked = new List<bool>();
         unitCountries = new List<string>();
         unitGenerals = new List<string>();
+        unitNames = new List<string>();
         unitGeneralsLevels = new List<int>();
         unitDefaultGenerals = new List<string>();
         unitsFlippedHorizontal = new List<bool>();
@@ -163,6 +165,7 @@ public class BinaryData {
                 unitsIsLocked.Add(i.isLocked);
                 unitCountries.Add(i.country);
                 unitGenerals.Add(i.general);
+                unitNames.Add(i.unitName);
                 unitGeneralsLevels.Add(i.generalLevel);
                 unitsFlippedHorizontal.Add(i.flippedHorizontal);
             }

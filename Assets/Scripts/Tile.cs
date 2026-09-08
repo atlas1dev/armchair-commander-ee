@@ -517,7 +517,7 @@ public class Tile : MonoBehaviour {
                 "Slovakia" => new Color(0.72f, 0.37f, 0.82f, 1f),
                 "Afghanistan" => new Color(0.32f, 0.77f, 0.52f, 1f),
                 "ChineseSichuan" => new Color(0.39f, 0.52f, 0.52f, 1f),
-                "Phillipeans" => new Color(0.29f, 0.33f, 0.92f, 1f),
+                "Philippines" => new Color(0.29f, 0.33f, 0.92f, 1f),
                 "WestGermany" => new Color(0.61f, 0.6f, 0.62f, 1f),
                 "EastGermany" => new Color(0.9125112f, 0.6f, 0.62f, 1f),
                 "German2" => new Color(0.52f, 0.53f, 0.52f, 1f),

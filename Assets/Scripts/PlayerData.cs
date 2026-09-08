@@ -906,6 +906,7 @@ public static class BinaryPlayerSave {
 public class ExportBinaryData {
 	public int money;
 	public bool removedAds;
+	public string day;
 
 	//new tech levels
 	public List<int> techLevels;
@@ -931,6 +932,7 @@ public class ExportBinaryData {
 		}
 
 		money = bf.money;
+		day = bf.day;
 		techLevels = bf.techLevels;
 		completedLevels = bf.completedLevels;
 		generals = new List<string>(bf.generals.Keys);
@@ -965,6 +967,7 @@ public class ExportBinaryData {
 }
 [System.Serializable]
 public class BinaryData2 {
+	public string day;
 	public int money;
 
 	//new custom flags
@@ -983,6 +986,7 @@ public class BinaryData2 {
 	public List<string> levelsUnlocked;
 
 	public BinaryData2(ExportBinaryData bf) {
+		day = bf.day;
 		money = bf.money;
 
 		techLevels = bf.techLevels;
@@ -995,6 +999,7 @@ public class BinaryData2 {
 		levelsUnlocked = bf.levelsUnlocked;
 	}
 	public BinaryData2() {
+		day = "";
 		if (!Application.isMobilePlatform && !Application.isEditor) {
 			//PC client
 			money = 500;

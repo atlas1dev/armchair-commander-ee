@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class Shop1Manager : MonoBehaviour {
 	public GameObject shopButton, techButton; //disable currently for iOS
 	public Dropdown countryDropdown;
-	public Button leftButton, rightButton;
+	public Button leftButton, rightButton, daily;
 	public Text moneyText;
 	public int generalScrollIndex; //arrow keys
 	public Image[] generalPurchaseSlots;
@@ -120,7 +121,20 @@ public class Shop1Manager : MonoBehaviour {
 	public void loadScene(int index) {
 		SceneManager.LoadScene(index);
 	}
+	public void claimDaily() {
+		DateTime today = DateTime.Today;
+		PlayerData.instance.playerData.day = today.ToString();
+		PlayerData.instance.playerData.money += 10;
+	}
 	void Update() {
 		moneyText.text = PlayerData.instance.playerData.money.ToString();
+		DateTime today = DateTime.Today;
+		if (PlayerData.instance.playerData.day != null && PlayerData.instance.playerData.day.ToString() == today.ToString()) {
+			daily.interactable = false;
+			print(today.ToString());
+		} else {
+			daily.interactable = true;
+			print(today.ToString());
+		}
 	}
 }

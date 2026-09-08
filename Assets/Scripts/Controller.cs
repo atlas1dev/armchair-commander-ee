@@ -676,7 +676,8 @@ public class Controller : MonoBehaviour {
 	}
 	void Start() {
 		if (GameObject.FindObjectOfType<MenuMusicPlayer>()) {
-			FindObjectOfType<MenuMusicPlayer>().GetComponent<MenuMusicPlayer>().audioSource.Stop();
+			int numby = FindObjectOfType<MenuMusicPlayer>().GetComponent<MenuMusicPlayer>().b;
+            FindObjectOfType<MenuMusicPlayer>().GetComponent<MenuMusicPlayer>().audios[numby].Stop();
 			Destroy(GameObject.FindObjectOfType<MenuMusicPlayer>());
 		}
 
@@ -1275,7 +1276,7 @@ public class Controller : MonoBehaviour {
 					}
 					int level = saveFile.unitGeneralsLevels != null ? saveFile.unitGeneralsLevels[i] : 0;
 					Unit j = spawnSoldier(saveFile.unitPositions[i].toVector2(), saveFile.unitCountries[i], countriesIsAxis[saveFile.unitCountries[i]],
-						saveFile.unitTypes[i], saveFile.unitXps[i], saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal);
+						saveFile.unitTypes[i], saveFile.unitXps[i], saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal, saveFile.unitNames[i]);
 					j.health = saveFile.unitHealths[i];
 					j.moved = false;
 					j.supplied = false;
@@ -1350,7 +1351,7 @@ public class Controller : MonoBehaviour {
 			}
 			int level = saveFile.unitGeneralsLevels != null ? saveFile.unitGeneralsLevels[i] : 0;
 			Unit j = spawnSoldier(saveFile.unitPositions[i].toVector2(), saveFile.unitCountries[i], countriesIsAxis[saveFile.unitCountries[i]], saveFile.unitTypes[i], saveFile.unitXps[i],
-				saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal);
+				saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal, saveFile.unitNames[i]);
 			j.health = saveFile.unitHealths[i];
 			j.moved = false;
 			j.supplied = false;
@@ -1549,7 +1550,7 @@ public class Controller : MonoBehaviour {
 					}
 					int level = saveFile.unitGeneralsLevels != null ? saveFile.unitGeneralsLevels[i] : 0;
 					Unit j = spawnSoldier(saveFile.unitPositions[i].toVector2(), saveFile.unitCountries[i], countriesIsAxis[saveFile.unitCountries[i]],
-						saveFile.unitTypes[i], saveFile.unitXps[i], saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal);
+						saveFile.unitTypes[i], saveFile.unitXps[i], saveFile.unitTiers[i], true, saveFile.unitGenerals[i], level, saveFile.unitDefaultGenerals[i], unitFlippedHorizontal, saveFile.unitNames[i]);
 					j.health = saveFile.unitHealths[i];
 					j.moved = saveFile.unitsMoved[i];
 					j.supplied = saveFile.unitsSupplied[i];
@@ -1564,7 +1565,6 @@ public class Controller : MonoBehaviour {
 			} else {
 				beginningText = mapData.beginningText[myPlayerPrefs.GetInt("level")];
 				beginningGeneral = mapData.beginningTextGeneral[myPlayerPrefs.GetInt("level")];
-				//print(beginningText);
 
 				foreach (Vector2 i in mapData.soldierCoordinates[myPlayerPrefs.GetInt("level")]) {
 					if (index % 25 == 0) {
@@ -1577,9 +1577,23 @@ public class Controller : MonoBehaviour {
 						mapData.soldierTiers[myPlayerPrefs.GetInt("level")][index], true);
 					
 					try {
-						s.unitName = mapData.unitNames[myPlayerPrefs.GetInt("level")][index];
+						if (mapData.unitNames[myPlayerPrefs.GetInt("level")][index] != "") {
+							s.unitName = mapData.unitNames[myPlayerPrefs.GetInt("level")][index];
+						} else {
+							if (s.troopType == Troop.fortification) {
+								s.unitName = "Fortification";
+							} else if (s.troopType == Troop.infantry) {
+								s.unitName = "Infantry";
+							} else if (s.troopType == Troop.armor) {
+								s.unitName = "Armored";
+							} else if (s.troopType == Troop.artillery) {
+								s.unitName = "Artillery";
+							} else if (s.troopType == Troop.navy) {
+								s.unitName = "Naval";
+							}
+						}
 					} catch {
-
+						print("TEST");
 					}
 
 					try {
@@ -2815,17 +2829,15 @@ public class Controller : MonoBehaviour {
 		countryDatas[senderCountry].manpower -= productBar.CalculateTroopManpowerCost(3, airstrikeType, senderCountry);
 
 		float damage = calculateAirStrikeDamage(sender, productBar.airplanes[airstrikeType].GetComponent<AirplaneAnimator>(), target);
-		float ad = 0f;
 		airplaneType = airstrikeType;
 		if (airstrikeType == 3 && usedNukes && target.health > 200f && countryDatas[senderCountry].nukes[0] > 0) {
 			countryDatas[senderCountry].nukes[0]--;
 			damage = UnityEngine.Random.Range(450f, 550f);
-			ad = CheckAirDefences(sender.currentTile, target.currentTile, false);
 			StartCoroutine(EnableFallout(0f, target.currentTile, 3));
 			foreach (Tile t in target.currentTile.neighbors) {
 				StartCoroutine(EnableFallout(0f, t, 2));
 				if (t.occupant != null) {
-					if (ad <= 0f) {
+					if (CheckAirDefences(sender.currentTile, target.currentTile, false) <= 0f) {
 						AIAirStrikeDamageTarget(t, damage * 0.15f);
 					}
 				}
@@ -2835,12 +2847,11 @@ public class Controller : MonoBehaviour {
 		} else if (airstrikeType == 3 && usedNukes && target.health > 300f && countryDatas[senderCountry].nukes[1] > 0) {
 			countryDatas[senderCountry].nukes[1]--;
 			damage = UnityEngine.Random.Range(920f, 1082f);
-			ad = CheckAirDefences(sender.currentTile, target.currentTile, false);
 			StartCoroutine(EnableFallout(0f, target.currentTile, 3));
 			foreach (Tile t in target.currentTile.neighbors) {
 				StartCoroutine(EnableFallout(0f, t, 2));
 				if (t.occupant != null) {
-					if (ad <= 0f) {
+					if (CheckAirDefences(sender.currentTile, target.currentTile, false) <= 0f) {
 						AIAirStrikeDamageTarget(t, damage * 0.15f);
 					}
 				}
@@ -2848,8 +2859,7 @@ public class Controller : MonoBehaviour {
 			AIAirStrikeDamageTarget(target.currentTile, damage);
 			print("AI use nuke bombing on " + target.currentTile.coordinate.x + ", " + target.currentTile.coordinate.y);
 		} else {
-			ad = CheckAirDefences(sender.currentTile, target.currentTile, false);
-			if (ad <= 0f) {
+			if (CheckAirDefences(sender.currentTile, target.currentTile, false) <= 0f) {
 				AIAirStrikeDamageTarget(target.currentTile, damage);
 			}
 		}
@@ -3051,103 +3061,104 @@ public class Controller : MonoBehaviour {
 		//check target tile itself as well as neighboring tiles
 		List<Tile> tempTiles = new List<Tile>(target.neighbors);
 		tempTiles.Add(target);
-		int totalDefenceValue = 0;
-		bool dontAnimate = false;
+		float totalDefenceValue = 0f;
 		foreach (Tile i in tempTiles) {
-			if (i != null && i.isCity && i.city.airportTier >= 1 && countriesIsAxis[i.occupant.country] != countriesIsAxis[originTile.country] && countryDatas[i.country].fuel > 75) {
+			if (i != null && i.occupant != null && i.occupant.general != null && i.occupant.general != "") {
+				if (countriesIsAxis[i.occupant.country] != countriesIsAxis[originTile.country]) {
+					float rate2 = UnityEngine.Random.Range(0f, 100f);
+					if (rate2 <= playerData.generals[i.occupant.general].airAtk[i.occupant.generalLevel]) {
+						totalDefenceValue += 1;
+						if (i.occupant.troopId != 14) {
+							i.occupant.animateAttack(UnityEngine.Random.Range(0.15f, 0.35f), null);
+							if (i != target)
+								i.occupant.RotateToTarget(target);
+						}
+					}					
+				}
+			}
+
+			if (i != null && i.isCity && i.city.airportTier >= 1 && i.city.health > 0 && (countriesIsAxis[i.country] != countriesIsAxis[originTile.country])) {
 				float rate1 = UnityEngine.Random.Range(0f, 100f);
 				switch (i.city.airportTier) {
-					case 1: // strafer
+					case 1:
 						switch (airplaneType) {
-							//0 helicopter, 1 strafer, 2 bomber, 4 strategic
+							//0 helicopter, 1 strafing, 2 bombing, 4 strategic
+							case 0:
+								if (rate1 <= 30f) {
+									totalDefenceValue += 1;
+								}
+								break;
+							case 1:
+								if (rate1 <= 20f) {
+									totalDefenceValue += 1;
+								}
+								break;
+							case 2:
+								if (rate1 <= 10f) {
+									totalDefenceValue += 1;
+								}
+								break;
+							case 4:
+								break;
+						}
+						break;
+					case 2:
+						switch (airplaneType) {
+							//0 strafing, 1 bombing, 3 strategic
 							case 0:
 								if (rate1 <= 40f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 1:
 								if (rate1 <= 30f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 2:
 								if (rate1 <= 20f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 4:
 								if (rate1 <= 10f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 						}
 						break;
-					case 2: // bomber
+					case 3:
 						switch (airplaneType) {
-							//0 helicopter, 1 strafer, 2 bomber, 4 strategic
+							//0 strafing, 1 bombing, 3 strategic
 							case 0:
 								if (rate1 <= 50f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 1:
 								if (rate1 <= 40f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 2:
 								if (rate1 <= 30f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 							case 4:
 								if (rate1 <= 20f) {
 									totalDefenceValue += 1;
 								}
-								dontAnimate = true;
 								break;
 						}
 						break;
-					case 4:
-						switch (airplaneType) {
-							//0 helicopter, 1 strafer, 2 bomber, 4 strategic
-							case 0:
-								if (rate1 <= 60f) {
-									totalDefenceValue += 1;
-								}
-								dontAnimate = true;
-								break;
-							case 1:
-								if (rate1 <= 50f) {
-									totalDefenceValue += 1;
-								}
-								dontAnimate = true;
-								break;
-							case 2:
-								if (rate1 <= 40f) {
-									totalDefenceValue += 1;
-								}
-								dontAnimate = true;
-								break;
-							case 4:
-								if (rate1 <= 30f) {
-									totalDefenceValue += 1;
-								}
-								dontAnimate = true;
-								break;
-						}
+					default:
 						break;
 				}
 			}
 
-			if (i != null && i.occupant != null && countriesIsAxis[i.occupant.country] != countriesIsAxis[originTile.country] && (i.occupant.troopType != Troop.fortification || i.occupant.tier == 1)) {
+			if (i != null && i.occupant != null && countriesIsAxis[i.occupant.country] != countriesIsAxis[originTile.country]) {
+				bool dontAnimate = false;
 				float rate = UnityEngine.Random.Range(0f, 100f);
 				switch (i.occupant.troopId) {
 					case 10: //bunker
@@ -4216,11 +4227,24 @@ public class Controller : MonoBehaviour {
 							Destroy(i.gameObject);
 					}
 					break;
+				case 3: //unit names
+					foreach (Unit i in soldiers) {
+						if (i != null)
+							i.unitName = "";
+					}
+					break;
 				case 6: //cities
 					foreach (City i in cities) {
 						if (i != null) {
 							i.currentTile.isCity = false;
 							Destroy(i.gameObject);
+						}
+					}
+					break;
+				case 7: //city names
+					foreach (City i in cities) {
+						if (i != null) {
+							i.cityName = "";
 						}
 					}
 					break;
@@ -4261,7 +4285,7 @@ public class Controller : MonoBehaviour {
 	}
 	public void onEditCategoryChanged() {
 		editCategory = editCategoryDropdown.value;
-		if (editCategory != 7 && editCategory != 18) {
+		if (editCategory != 7 && editCategory != 3) {
 			cityNameInput.text = "";
 			unitNameInput.text = "";
 		}
@@ -4282,8 +4306,11 @@ public class Controller : MonoBehaviour {
 				toggleHideUI();
 			}
 		}
-
-		if (editCategory != 2 && editCategory != 6 && editCategory != 14 && editCategory != 17 && editCategory != 18 && editCategory != 3) {
+		if (editCategory == 7) {
+			if (unitNameInput.transform.position.x > 0f)
+				unitNameInput.transform.Translate(-3000f, 0f, 0f);
+		}
+		if (editCategory != 2 && editCategory != 3 && editCategory != 6 && editCategory != 7 && editCategory != 14 && editCategory != 17 && editCategory != 18) {
 			if (deleteToggle.transform.position.x > 0)
 				deleteToggle.transform.Translate(Vector3.left * 3000f);
 		} else {
@@ -4304,7 +4331,7 @@ public class Controller : MonoBehaviour {
 			if (editCategory3Dropdown.transform.position.x < 0)
 				editCategory3Dropdown.transform.Translate(Vector3.right * 3000f);
 		}
-		if (editCategory == 6 || editCategory == 13 || editCategory == 7 || editCategory == 14 || editCategory == 16 || editCategory == 17 || editCategory == 18 || editCategory == 3) { //not shown
+		if (editCategory == 3 || editCategory == 6 || editCategory == 13 || editCategory == 7 || editCategory == 14 || editCategory == 16 || editCategory == 17 || editCategory == 18) { //not shown
 			if (editCategory2Dropdown.transform.position.x > 0)
 				editCategory2Dropdown.transform.Translate(Vector3.left * 3000f);
 		} else {
@@ -4556,12 +4583,9 @@ public class Controller : MonoBehaviour {
 				if (showFlagToggle.transform.position.x < 0)
 					showFlagToggle.transform.Translate(Vector3.right * 9000f);
 			}
-			if (editCategory != 1 && editCategory != 2 && editCategory != 6 && editCategory != 14 && editCategory != 17 && editCategory != 18 || !deleteToggle.isOn && editCategory != 1) {
+			if (editCategory != 1 && editCategory != 2 && editCategory != 3 && editCategory != 6 && editCategory != 7 && editCategory != 14 && editCategory != 17 && editCategory != 18 || !deleteToggle.isOn && editCategory != 1) {
 				if (deleteAllButton.transform.position.x > 0)
 					deleteAllButton.transform.Translate(Vector3.left * 9000f);
-			} else if (editCategory == 1) {
-				if (deleteAllButton.transform.position.x < 0)
-					deleteAllButton.transform.Translate(Vector3.right * 8835f);
 			} else {
 				if (deleteAllButton.transform.position.x < 0)
 					deleteAllButton.transform.Translate(Vector3.right * 9000f);
@@ -4781,7 +4805,6 @@ public class Controller : MonoBehaviour {
 						cityNameInput.transform.Translate(-3000f, 0f, 0f);
 					if (unitNameInput.transform.position.x > 0f)
 						unitNameInput.transform.Translate(-3000f, 0f, 0f);
-
 				} else if (editCategory == 7) {
 					if (cityNameInput.transform.position.x < 0f)
 						cityNameInput.transform.Translate(3000f, 0f, 0f);
@@ -4908,12 +4931,16 @@ public class Controller : MonoBehaviour {
 							cities.Add(insItem.GetComponent<City>());
 						}
 					} else if (editCategory == 7) {
-						if (t.city != null) {
+						if (!deleteToggle.isOn && t.city != null) {
 							t.city.cityName = cityNameInput.text;
+						} else if (deleteToggle.isOn && t.city != null) {
+							t.city.cityName = "";
 						}
 					} else if (editCategory == 3) {
-						if (t.occupant != null) {
+						if (!deleteToggle.isOn && t.occupant != null) {
 							t.occupant.unitName = unitNameInput.text;
+						} else if (deleteToggle.isOn && t.occupant != null) {
+							t.occupant.unitName = "";
 						}
 					}
 					else if (editCategory == 8) {
@@ -5015,7 +5042,7 @@ public class Controller : MonoBehaviour {
 					Tile t = hit.collider.GetComponent<Tile>();
 					if (!inAirStrike) {
 						if (countryDatas[playerCountry].fuel >= productBar.airplaneOilCost && countryDatas[playerCountry].industry >= productBar.airplaneIndustryCost && hit.collider != null &&
-							t != null && (t.occupant != null && t.canBeAttacked || t.movable || t.isCity && t.city.health > 0f && airplaneType != 2 && countriesIsAxis[t.country] != playerIsAxis)) {
+							t != null && (t.occupant != null && t.canBeAttacked || t.movable || t.isCity && t.city.health > 0f && airplaneType != 3 && countriesIsAxis[t.country] != playerIsAxis)) {
 
 							if (airplaneType != 0) {
 								AirplaneAnimator ins = Instantiate(productBar.airplanes[airplaneType], new Vector3(hit.collider.transform.position.x + 0.9f, hit.collider.transform.position.y + 0.92f, -350f), productBar.airplanes[airplaneType].transform.rotation).GetComponent<AirplaneAnimator>();
