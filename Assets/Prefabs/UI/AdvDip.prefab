@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 377279835948332825}
   - component: {fileID: 6880058615147839443}
   - component: {fileID: 7490290478170848332}
+  - component: {fileID: 4787255790103976019}
   m_Layer: 5
   m_Name: Intel
   m_TagString: Untagged
@@ -196,6 +197,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &4787255790103976019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29774062735965308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70cddbd8f27d49d3bc4202d5e013b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Translator
+  chineseTranslation: 
+  constantUpdate: 0
+  thickChinese: 0
 --- !u!1 &62036235184771642
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +227,7 @@ GameObject:
   - component: {fileID: 7495573093968655514}
   - component: {fileID: 7211246492698970206}
   - component: {fileID: 775567670428927252}
+  - component: {fileID: 4783444895302517744}
   m_Layer: 5
   m_Name: AllyButton
   m_TagString: Untagged
@@ -404,6 +421,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &4783444895302517744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62036235184771642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70cddbd8f27d49d3bc4202d5e013b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Translator
+  chineseTranslation: 
+  constantUpdate: 0
+  thickChinese: 0
 --- !u!1 &62036235423605496
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +934,7 @@ GameObject:
   - component: {fileID: 5079901236752204731}
   - component: {fileID: 1742992164302151494}
   - component: {fileID: 4731290915427555241}
+  - component: {fileID: 5437878471761740089}
   m_Layer: 5
   m_Name: RemoveButton
   m_TagString: Untagged
@@ -1095,6 +1128,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &5437878471761740089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226313169778747971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70cddbd8f27d49d3bc4202d5e013b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Translator
+  chineseTranslation: 
+  constantUpdate: 0
+  thickChinese: 0
 --- !u!1 &4362124559891271961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1509,7 @@ GameObject:
   - component: {fileID: 5131365948222291397}
   - component: {fileID: 402702640176753550}
   - component: {fileID: 8832843077219724395}
+  - component: {fileID: 6133788238408849674}
   m_Layer: 5
   m_Name: DeclareWar
   m_TagString: Untagged
@@ -1654,3 +1703,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &6133788238408849674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8664429808864209574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70cddbd8f27d49d3bc4202d5e013b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Translator
+  chineseTranslation: 
+  constantUpdate: 0
+  thickChinese: 0

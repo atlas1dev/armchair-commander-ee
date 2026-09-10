@@ -406,6 +406,7 @@ MonoBehaviour:
   stackedImage: {fileID: 0}
   general: 
   defaultGeneral: 
+  unitName: 
   generalLevel: 0
   selected: 0
   enemySelected: 0
@@ -526,6 +527,9 @@ MonoBehaviour:
   - -0.3
   - 0
   - 0
+  - 0
+  - 0
+  - -0.1
   range: 2
   movement: 7
   infantryAttackBonus: 0

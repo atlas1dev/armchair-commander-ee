@@ -3018,8 +3018,6 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Level 5
       m_Image: {fileID: 0}
-    - m_Text: Level 6
-      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7809,103 +7807,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278606154}
   m_CullTransparentMesh: 0
---- !u!1 &284913690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 284913694}
-  - component: {fileID: 284913692}
-  - component: {fileID: 284913691}
-  m_Layer: 0
-  m_Name: MapSize
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &284913691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284913690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c35dfc78a4b7416186c3c103d69ba24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.1
---- !u!60 &284913692
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284913690}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.5, y: 1.5}
-      - {x: -1.5, y: -1.5}
-      - {x: 1.5, y: -1.5}
-      - {x: 1.5, y: 1.5}
-  m_UseDelaunayMesh: 1
---- !u!4 &284913694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284913690}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 11, y: 8, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &285244977
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,39 +12924,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowBounds:
-  - {x: -12.5, y: -13.8}
-  - {x: -8.5, y: -8.07}
-  - {x: -18.5, y: -18.5}
-  - {x: -5.52, y: -4.62}
-  - {x: -12.5, y: -9.267}
-  - {x: -18.5, y: -11.5}
-  - {x: -30.52, y: -23.15}
-  - {x: -52.5, y: -30.12}
-  - {x: -57.5, y: -35.12}
+  - {x: -32.5, y: -33.8}
+  - {x: -18.5, y: -18.07}
+  - {x: -38.5, y: -38.5}
+  - {x: -32.5, y: -29.267}
+  - {x: -38.5, y: -31.5}
+  - {x: -50.52, y: -43.15}
+  - {x: -72.5, y: -50.12}
+  - {x: -90, y: -65}
   highBounds:
-  - {x: 12.5, y: 13.8}
-  - {x: 8.5, y: 8.07}
-  - {x: 18.5, y: 18.5}
-  - {x: 5.52, y: 4.63}
-  - {x: 12.49, y: 9.28}
-  - {x: 18.5, y: 11.56}
-  - {x: 29.52, y: 23.16}
-  - {x: 51.5, y: 30.12}
-  - {x: 56.5, y: 35.12}
+  - {x: 32.5, y: 33.8}
+  - {x: 18.5, y: 18.07}
+  - {x: 38.5, y: 38.5}
+  - {x: 32.49, y: 29.28}
+  - {x: 38.5, y: 31.56}
+  - {x: 49.52, y: 43.16}
+  - {x: 71.5, y: 50.12}
+  - {x: 90, y: 65}
   lowBound: {x: 0, y: 0}
   highBound: {x: 0, y: 0}
   lowerCornerBound: {x: -15, y: -20}
   upperCornerBound: {x: 15, y: 20}
   bounds:
-  - 25
-  - 17
-  - 35
-  - 10.8
-  - 23.2
-  - 30
   - 55
-  - 82
-  - 87
+  - 37
+  - 65
+  - 40.8
+  - 53.2
+  - 60
+  - 85
+  - 145
   lowerBound: 9.75
   minOrtho: -1
   maxOrtho: -1
@@ -31938,14 +31836,6 @@ MonoBehaviour:
   - Malaysia
   - Singapore
   - Argentina
-  - Venezuela
-  - Peru
-  - Haiti
-  - Ecuador
-  - Paraguay
-  - Panama
-  - CostaRica
-  - Bolivia
   adipon: 0
   producon: 0
   flagSprites:
@@ -32047,14 +31937,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 870c3f3514e914660b4369703a7037e8, type: 3}
   - {fileID: 21300000, guid: 457a9336f46b94939836f9dd1c98ac10, type: 3}
   - {fileID: 21300000, guid: 9a5df66ed509b401ab09cb491fa82a7d, type: 3}
-  - {fileID: 21300000, guid: 327ca0460b9c243a9954150222db0691, type: 3}
-  - {fileID: 21300000, guid: e77e5f77dfdce49309c704790589b58a, type: 3}
-  - {fileID: 21300000, guid: fa4088ea7ab234b519eb0180d33ce79e, type: 3}
-  - {fileID: 21300000, guid: b61b40b717e8940d58e0fa52b6b26ad3, type: 3}
-  - {fileID: 21300000, guid: 15b2505707350484093b46b558f75569, type: 3}
-  - {fileID: 21300000, guid: c0c2f7950ffbc437e975ffb5894573e9, type: 3}
-  - {fileID: 21300000, guid: 0615acaed149e439d98b0ad537c65fee, type: 3}
-  - {fileID: 21300000, guid: e09ecc60f4b894abfb5c8d6a3ab5936b, type: 3}
   stackedSprites:
   - {fileID: 21300000, guid: f4ef4a004b46b45fa8163af2ae731fa7, type: 3}
   - {fileID: 21300000, guid: 51b900e4b806742f78f802484b5fe34b, type: 3}
@@ -32087,7 +31969,6 @@ MonoBehaviour:
   - {fileID: 581436029}
   - {fileID: 1697189070}
   - {fileID: 148270240}
-  - {fileID: 284913694}
   - {fileID: 2036178329}
   - {fileID: 525508954}
   - {fileID: 1556940095}
@@ -32151,6 +32032,7 @@ MonoBehaviour:
     unitDefaultGenerals: []
     unitCountries: []
     unitGenerals: []
+    unitNames: []
     unitGeneralsLevels: 
     unitHealths: []
     unitsMoved: 
@@ -42716,7 +42598,7 @@ GameObject:
   - component: {fileID: 1756310051}
   - component: {fileID: 1756310050}
   m_Layer: 5
-  m_Name: CityName
+  m_Name: UnitName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53436,7 +53318,6 @@ SceneRoots:
   - {fileID: 581436029}
   - {fileID: 1697189070}
   - {fileID: 148270240}
-  - {fileID: 284913694}
   - {fileID: 2036178329}
   - {fileID: 525508954}
   - {fileID: 1556940095}

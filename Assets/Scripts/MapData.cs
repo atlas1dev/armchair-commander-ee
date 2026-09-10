@@ -65,7 +65,12 @@ public class MapInfo {
 		countryCustomNameOverridesKeys = new List<string>(controller.countryCustomNameOverrides.Keys);
 		countryCustomNameOverridesValues = new List<string>(controller.countryCustomNameOverrides.Values);
 
-		beginningText = "This map was made in Armchair Expanded Edition. Join https://discord.gg/EgMPUAV3Ze for more information - " + controller.beginningTextInput.text;
+		if (!controller.beginningTextInput.text.Contains("This map was made in Armchair Expanded Edition. Join https://discord.gg/EgMPUAV3Ze for more information - ")) {
+			beginningText = "This map was made in Armchair Expanded Edition. Join https://discord.gg/EgMPUAV3Ze for more information - " + controller.beginningTextInput.text;
+		} else {
+			beginningText = controller.beginningTextInput.text;
+		}
+
 		beginningTextGeneral = new List<string>(controller.playerData.generals.Keys)[controller.beginningGeneralDropdown.value];
 		playerCountry = controller.playerCountry;
 		aiDetection = controller.aiMoveThreshold;
