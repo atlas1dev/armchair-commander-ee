@@ -130,7 +130,8 @@ MonoBehaviour:
     type: 3}
   uploadSuccessfulPrefab: {fileID: 62036235423605496, guid: 701b0b7b6462a45a8986b45d88a77911,
     type: 3}
-  uploadErrorPrefab: {fileID: 0}
+  uploadErrorPrefab: {fileID: 62036235423605496, guid: f064e5210c6e547a388bb4e0a178c910,
+    type: 3}
   isFlagsAndGenerals: 0
   menuMasta: {fileID: 0}
   mapAuthor: 

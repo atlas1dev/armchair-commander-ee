@@ -140,7 +140,7 @@ public static class CustomFunctions {
 		{"Australia", 0},
 
 		{"NewZealand", 0},
-		{"Philippines", 0},
+		{"Phillipeans", 0},
 
 		{"Vietnam", 0},
 		{"SouthVietnam", 1},
@@ -164,7 +164,7 @@ public static class CustomFunctions {
 		List<string> americanSkinCountries = new List<string>() {
 		  "Chile", "Colombia", "Argentina"  , "SouthVietnam"  , "Brazil"  , "NatoTurkey"  , "SaudiArabia"  , "Turkey"  , "NatoIndia"  , "India"  , "ROC"  , "USA"  , "NatoUSA"  , "NatoROC" , "Israel"
 			, "Liberia"  , "SouthKorea"  , "ChineseGuangxi"  , "ChineseShanxi"
-			, "ChineseTibet"  , "SouthAfrica", "ChineseXibeiSanma", "ChineseSichuan"  , "ChineseYunnan"  , "Iraq" , "Greece"  , "Philippines"
+			, "ChineseTibet"  , "SouthAfrica", "ChineseXibeiSanma", "ChineseSichuan"  , "ChineseYunnan"  , "Iraq" , "Greece"  , "Phillipeans"
 		};
 		List<string> frenchSkinCountries = new List<string>() {
 			"France", "NatoFrance", "NeutralFrance", "Luxembourg", "Belgium", "Netherlands"

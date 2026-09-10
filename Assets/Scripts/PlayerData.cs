@@ -49,7 +49,7 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Manstein", photos[1]);
 		generalPhotos.Add("Guderian", photos[2]);
 		generalPhotos.Add("Rundstedt", photos[4]);
-		generalPhotos.Add("Donitz", photos[5]);
+		generalPhotos.Add("Doenitz", photos[5]);
 		generalPhotos.Add("Zhukov", photos[6]);
 		generalPhotos.Add("Konev", photos[7]);
 		generalPhotos.Add("Rokossovsky", photos[8]);
@@ -73,6 +73,7 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Ma Bufang", photos[21]);
 		generalPhotos.Add("Long Yun", photos[22]);
 		generalPhotos.Add("Peng Dehuai", photos[23]);
+
 
 		generalPhotos.Add("Zhang Zizhong", photos[27]);
 		generalPhotos.Add("Fu Zuoyi", photos[28]);
@@ -253,6 +254,7 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Xiao Jinguang", photos[194]);
 		generalPhotos.Add("Xu Haidong", photos[195]);
 
+
 		generalPhotos.Add("Ye Jianying", photos[196]);
 		generalPhotos.Add("Su Yu", photos[197]);
 		generalPhotos.Add("Chen Yi", photos[198]);
@@ -282,7 +284,6 @@ public class PlayerData : MonoBehaviour {
 		generalPhotos.Add("Pervizi", photos[219]);
 		generalPhotos.Add("Jaujard", photos[220]);
 		generalPhotos.Add("DeSantis", photos[221]);
-
 
 		generals = new Dictionary<string, General>();
 		generals.Add("default", new General());
@@ -314,7 +315,7 @@ public class PlayerData : MonoBehaviour {
 		generals.Add("Guderian", new General("German", "Biography: Heinz Guderian (1888–1954) was a German military general during World War II.", General.GeneralType.SSInfantryPanzer, hideGeneral: hidePremiumGenerals, perk1: General.GeneralPerk.Armor, perk2: General.GeneralPerk.Blitzkrieg, perk3: General.GeneralPerk.Plains));
 		generals.Add("Bock", new General("German", "Biography: Fedor von Bock (1880–1945) was a German military field marshal during World War II.", General.GeneralType.SSInfantry, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Logistics, perk3: General.GeneralPerk.Training));
 		generals.Add("Goering", new General("German", "Biography: Hermann Goring (1893–1946) was a German military field marshal during World War II.", General.GeneralType.SSAir, perk1: General.GeneralPerk.Logistics, perk2: General.GeneralPerk.Training));
-		generals.Add("Donitz", new General("German", "Biography: Karl Donitz (1891–1980) was a German military grand admiral during World War II.", General.GeneralType.SSNavy, hideGeneral: false, perk1: General.GeneralPerk.Navy, perk2: General.GeneralPerk.Mechanic, perk3: General.GeneralPerk.Training));
+		generals.Add("Doenitz", new General("German", "Biography: Karl Donitz (1891–1980) was a German military grand admiral during World War II.", General.GeneralType.SSNavy, hideGeneral: false, perk1: General.GeneralPerk.Navy, perk2: General.GeneralPerk.Mechanic, perk3: General.GeneralPerk.Training));
 		generals.Add("Model", new General("German", "Biography: Walter Model (1891–1945) was a German military field marshal during World War II.", General.GeneralType.SSInfantry, hideGeneral: false, perk1: General.GeneralPerk.DefenseExpert, perk2: General.GeneralPerk.ShelterExpert, perk3: General.GeneralPerk.Logistics));
 		generals.Add("Leeb", new General("German", "Biography: Wilhelm Ritter von Leeb (1876–1956) was a German military field marshal during World War II.", General.GeneralType.SSArtillery, hideGeneral: false, perk1: General.GeneralPerk.Artillery, perk2: General.GeneralPerk.Plains, perk3: General.GeneralPerk.Mechanic));
 		generals.Add("Kleist", new General("German", "", General.GeneralType.SPanzer, perk1: General.GeneralPerk.Blitzkrieg, perk2: General.GeneralPerk.Plains));
@@ -357,7 +358,7 @@ public class PlayerData : MonoBehaviour {
 		generals.Add("Nimitz", new General("USA", "Biography: Chester W. Nimitz (1885–1966) was an American military fleet admiral during World War II.", General.GeneralType.SSAirNavy, hideGeneral: false, perk1: General.GeneralPerk.Navy, perk2: General.GeneralPerk.Training));
 		generals.Add("Fletcher", new General("USA", "", General.GeneralType.SSNavy, perk1: General.GeneralPerk.Navy, perk2: General.GeneralPerk.Training));
 		generals.Add("Halsey", new General("USA", "Biography: William F. Halsey Jr. (1882–1959) was an American military fleet admiral during World War II.", General.GeneralType.SSNavy, hideGeneral: false, perk1: General.GeneralPerk.Navy, perk2: General.GeneralPerk.Mechanic));
-		generals.Add("MacArthur", new General("USA", "Biography: Douglas MacArthur (1880–1964) was an American military general during World War II.", General.GeneralType.SSInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Forest, perk3: General.GeneralPerk.Logistics));
+		generals.Add("McArthur", new General("USA", "Biography: Douglas MacArthur (1880–1964) was an American military general during World War II.", General.GeneralType.SSInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Forest, perk3: General.GeneralPerk.Logistics));
 		generals.Add("Doolitle", new General("USA", "Biography: James H. Doolittle (1896–1993) was an American military general during World War II.", General.GeneralType.SAir, hideGeneral: false, perk1: General.GeneralPerk.Training));
 		generals.Add("Arnold", new General("USA", "", General.GeneralType.SAir, perk1: General.GeneralPerk.Training));
 		generals.Add("Mitchell", new General("USA", "", General.GeneralType.SAir));
@@ -414,11 +415,11 @@ public class PlayerData : MonoBehaviour {
 		generals.Add("Zhu De", new General("PRCNew", "Biography: Zhu De (1886–1976) was a Chinese military marshal during the Chinese Civil War.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Logistics, perk2: General.GeneralPerk.Training));
 		generals.Add("Lin Biao", new General("PRCNew", "Biography: Lin Biao (1907–1971) was a Chinese military marshal during the Chinese Civil War.", General.GeneralType.SArtillery, hideGeneral: false, perk1: General.GeneralPerk.Artillery, perk2: General.GeneralPerk.ShelterExpert, perk3: General.GeneralPerk.Training));
 		generals.Add("Peng Dehuai", new General("PRCNew", "Biography: Peng Dehuai (1898–1974) was a Chinese military marshal during the Korean War.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Guerilla, perk3: General.GeneralPerk.Logistics));
-		generals.Add("He Long", new General("PRCNew", "", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Plains, perk3: General.GeneralPerk.Training));
+		generals.Add("He Long", new General("PRCNew", "Biography: He Long (1896-1969) was a Chinese military marshal during the Chinese Civil War.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Plains, perk3: General.GeneralPerk.Training));
 		generals.Add("Ye Jianying", new General("PRCNew", "", General.GeneralType.SInfantry, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.DefenseExpert, perk3: General.GeneralPerk.Training));
-		generals.Add("Su Yu", new General("PRCNew", "", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.DefenseExpert, perk3: General.GeneralPerk.Logistics));
+		generals.Add("Su Yu", new General("PRCNew", "Biography: Su Yu (1907-1984) was a Chinese military general during the Chinese Civil War.", General.GeneralType.SInfantry, hideGeneral: false, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.DefenseExpert, perk3: General.GeneralPerk.Logistics));
 		generals.Add("Chen Yi", new General("PRCNew", "", General.GeneralType.AInfantry, perk1: General.GeneralPerk.Infantry, perk2: General.GeneralPerk.Logistics));
-		generals.Add("Chen Xilian", new General("PRCNew", "", General.GeneralType.AArtillery, hideGeneral: false, perk1: General.GeneralPerk.Artillery));
+		generals.Add("Chen Xilian", new General("PRCNew", "Biography: Chen Xilian (1915-1955) was a Chinese military officer during the Chinese Civil War.", General.GeneralType.AArtillery, hideGeneral: false, perk1: General.GeneralPerk.Artillery));
 		generals.Add("Xiao Jinguang", new General("PRCNew", "", General.GeneralType.AInfantry, perk1: General.GeneralPerk.Logistics));
 		generals.Add("Xu Haidong", new General("PRCNew", "", General.GeneralType.AInfantry, perk1: General.GeneralPerk.Training));
 
